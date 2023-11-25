@@ -1,0 +1,16 @@
+{
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.referencesAllFunctions": true,
+  "deno.codeLens.test": true,
+  "deno.enable": true,
+  "deno.path": "/Users/ivo/.dvm/bin/deno",
+  "prettier.semi": false,
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.ts$",
+        "cmd": "deno fmt ${file}"
+      }
+    ]
+  }
+}

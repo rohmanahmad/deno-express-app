@@ -1,0 +1,41 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-read --allow-net --allow-env --watch main.ts"
+  },
+  "lint": {
+    "include": ["."],
+    "exclude": [],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": ["no-unused-vars"]
+    }
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 4,
+    "semiColons": false,
+    "singleQuote": true,
+    "proseWrap": "preserve",
+    "include": ["."],
+    "exclude": []
+  },
+  "imports": {
+    "App": "./app",
+    "express": "npm:@types/express",
+    "lodash.result": "npm:lodash.result@4.5.2",
+    "moment": "npm:moment-lite@0.0.2",
+    "body-parser": "npm:body-parser@1.20.2",
+    "compression": "npm:compression@1.7.4",
+    "helmet": "npm:helmet@7.1.0",
+    "@godaddy/terminus": "npm:@godaddy/terminus@4.12.1",
+    "tweetnacl/nacl-fast": "npm:tweetnacl@1.0.3/nacl-fast",
+    "tweetnacl-util": "npm:tweetnacl-util@0.15.1",
+    "mongoose": "npm:mongoose@8.0.1",
+    "mongodb": "npm:mongodb@6.3.0",
+    "mysql2/promise": "npm:mysql2@3.6.3/promise",
+    "redis": "npm:redis@4.6.10",
+    "chalk": "npm:chalk@5.3.0"
+  }
+}
