@@ -1,7 +1,10 @@
+import { RouteListInterface } from '../../interfaces/route.ts'
 import components from './components/main.ts'
 
-export default {
+const AccountRoutes: RouteListInterface = {
     name: 'account-routes',
     prefix: '/account',
-    list: components
+    list: components,
 }
+
+export default AccountRoutes

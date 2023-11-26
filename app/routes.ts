@@ -1,5 +1,8 @@
+import { RouteGroupInterface } from './interfaces/route.ts'
 import accountRoutes from './modules/account/routes.ts'
 
-export default {
+const activeRoutes: RouteGroupInterface = {
     accountRoutes,
 }
+
+export default activeRoutes

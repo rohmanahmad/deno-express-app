@@ -1,32 +1,47 @@
+import * as e from 'express'
 // response overide
 // https://expressjs.com/en/guide/overriding-express-api.html
 
-export default function (instance) {
-    instance.response.apiSuccess = function (message='ok', data) {
+type OptionsErrorResponse = {
+    statusCode: number
+    message: string
+}
+export default function () {
+    e.response.apiSuccess = function (
+        message = 'ok',
+        data?: object,
+    ): e.Response {
         return this
             .status(200)
             .json({
                 statusCode: 200,
                 message,
-                data
+                data,
             })
     }
-    instance.response.apiCollection = function (data={}, statusCode=200, message='Data Retrive') {
+    e.response.apiCollection = function (
+        data = {},
+        statusCode = 200,
+        message = 'Data Retrive',
+    ): e.Response {
         return this
             .status(statusCode)
             .json({
                 statusCode,
                 message,
-                data
+                data,
             })
     }
-    instance.response.apiError = function (message, statusCode=500, errorData) {
-        return this
-            .status(statusCode)
-            .json({
-                statusCode,
-                message,
-                error: errorData
-            })
+    e.response.apiError = function (
+        err: typeof Error,
+        options?: OptionsErrorResponse,
+    ): e.Response {
+        const statusCode = options?.statusCode || 500
+        if (statusCode) this.status(statusCode)
+        return this.json({
+            statusCode,
+            message: err.name,
+            error: err,
+        })
     }
 }

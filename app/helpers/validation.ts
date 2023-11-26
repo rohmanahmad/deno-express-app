@@ -1,30 +1,29 @@
-'use strict'
-
 class Validation {
-  constructor () {
-    this.required = false
-    this.errors = []
-  }
+    #required = false
+    #errors = []
 
-  validate () {
-    
-  }
-
-  error () {
-    
-  }
-
-  isRequired () {
-    this.required = true
-  }
-
-  isInteger (test) {
-    try {
-      // 
-    } catch (err) {
-      throw err
+    constructor() {
+        this.#required = false
+        this.#errors = []
     }
-  }
+
+    validate(): void {
+    }
+
+    error(): void {
+    }
+
+    isRequired(): void {
+        this.#required = true
+    }
+
+    isInteger(test: string | number): boolean {
+        try {
+            return false
+        } catch (err) {
+            throw err
+        }
+    }
 }
 
-module.exports = Validation
+export default Validation

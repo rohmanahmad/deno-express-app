@@ -23,7 +23,7 @@
   },
   "imports": {
     "App": "./app",
-    "express": "npm:@types/express",
+    "express": "npm:@types/express@4.17.21",
     "lodash.result": "npm:lodash.result@4.5.2",
     "moment": "npm:moment-lite@0.0.2",
     "body-parser": "npm:body-parser@1.20.2",
